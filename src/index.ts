@@ -1,24 +1,12 @@
 import express, { type Express } from 'express'
 
+import {pets} from './data/pets'
+
 const PORT = 8000
 const app = express()
 
-type Pet = {
-  name: string,
-  species: string,
-  adopted: boolean,
-  age: number
-}
-
-const pet: Pet = {
-  name: "Cicero",
-  species: "Doberman",
-  adopted: false,
-  age: 4
-}
-
 app.get('/', (req, res)=> {
-  res.json(pet)
+  res.json(pets)
 })
 
 app.listen(PORT, ()=>{
